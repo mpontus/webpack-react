@@ -33,6 +33,16 @@ module.exports = function(_env, argv) {
             isProduction ? MiniCssExtractPlugin.loader : "style-loader",
             "css-loader"
           ]
+        },
+        {
+          test: /\.(png|jpg|gif)$/i,
+          use: {
+            loader: "url-loader",
+            options: {
+              limit: 8192,
+              name: "static/media/[name].[hash:8].[ext]"
+            }
+          }
         }
       ]
     },
