@@ -4,10 +4,17 @@
   "main": "index.js",
   "author": "Michael Pontus <m.pontus@gmail.com>",
   "license": "MIT",
-  "scripts": {},
+  "scripts": {
+    "build": "webpack --mode production",
+    "start": "webpack-dev-server --mode development"
+  },
   "dependencies": {
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "webpack": "^4.40.2",
+    "webpack-cli": "^3.3.9",
+    "webpack-dev-server": "^3.8.1"
+  }
 }
