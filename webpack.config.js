@@ -119,6 +119,12 @@ module.exports = function(_env, argv) {
         }
       },
       runtimeChunk: "single"
+    },
+    devServer: {
+      compress: true,
+      historyApiFallback: true,
+      open: true,
+      overlay: true
     }
   };
 };
