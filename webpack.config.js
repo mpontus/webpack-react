@@ -43,6 +43,10 @@ module.exports = function(_env, argv) {
               name: "static/media/[name].[hash:8].[ext]"
             }
           }
+        },
+        {
+          test: /\.svg$/,
+          use: ["@svgr/webpack"]
         }
       ]
     },
