@@ -5,6 +5,9 @@
   "author": "Michael Pontus <m.pontus@gmail.com>",
   "license": "MIT",
   "scripts": {},
-  "dependencies": {},
+  "dependencies": {
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0"
+  },
   "devDependencies": {}
 }
