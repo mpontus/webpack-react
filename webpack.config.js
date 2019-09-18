@@ -1,6 +1,7 @@
 const path = require("path");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const webpack = require("webpack");
 
 module.exports = function(_env, argv) {
   const isProduction = argv.mode === "production";
@@ -70,6 +71,11 @@ module.exports = function(_env, argv) {
       new HtmlWebpackPlugin({
         template: path.resolve(__dirname, "public/index.html"),
         inject: true
+      }),
+      new webpack.DefinePlugin({
+        "process.env.NODE_ENV": JSON.stringify(
+          isProduction ? "production" : "development"
+        )
       })
     ].filter(Boolean)
   };
