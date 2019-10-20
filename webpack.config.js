@@ -39,6 +39,14 @@ module.exports = function(_env, argv) {
           ]
         },
         {
+          test: /\.less/,
+          use: [
+            isProduction ? MiniCssExtractPlugin.loader : "style-loader",
+            "css-loader",
+            "less-loader"
+          ]
+        },
+        {
           test: /\.(png|jpg|gif)$/i,
           use: {
             loader: "url-loader",
