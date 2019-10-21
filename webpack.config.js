@@ -47,9 +47,11 @@ module.exports = function(_env, argv) {
             {
               loader: "css-loader",
               options: {
-                modules: true
+                modules: true,
+                importLoaders: 1
               }
-            }
+            },
+            "postcss-loader"
           ]
         },
         {
