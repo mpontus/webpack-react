@@ -33,9 +33,23 @@ module.exports = function(_env, argv) {
         },
         {
           test: /\.css$/,
+          include: /node_modules/,
           use: [
             isProduction ? MiniCssExtractPlugin.loader : "style-loader",
             "css-loader"
+          ]
+        },
+        {
+          test: /\.css$/,
+          exclude: /node_modules/,
+          use: [
+            isProduction ? MiniCssExtractPlugin.loader : "style-loader",
+            {
+              loader: "css-loader",
+              options: {
+                modules: true
+              }
+            }
           ]
         },
         {
