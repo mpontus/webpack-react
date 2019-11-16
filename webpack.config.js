@@ -77,7 +77,8 @@ module.exports = function(_env, argv) {
           isProduction ? "production" : "development"
         )
       }),
-      new WorkboxPlugin.GenerateSW({
+      new WorkboxPlugin.InjectManifest({
+        swSrc: "src/service-worker.js",
         swDest: "service-worker.js",
         clientsClaim: true,
         skipWaiting: true
